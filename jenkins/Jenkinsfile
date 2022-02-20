@@ -31,7 +31,7 @@ pipeline {
          stage('check version') {
            steps {
              ansiColor('xterm') {
-               container("jenkins-agent") {
+               container("aws-cli") {
                  sh 'aws --version'
                  sh 'aws sts get-caller-identity'
                }
