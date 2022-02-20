@@ -3,9 +3,7 @@ kind: Pod
 metadata:
   labels:
     some-label: jenkins-pipeline
-  namespace: jenkins
 spec:
-  serviceAccountName: jenkins-agent
   containers:
   - name: aws-cli
     image: amazon/aws-cli
