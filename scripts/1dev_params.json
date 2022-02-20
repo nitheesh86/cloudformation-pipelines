@@ -1,0 +1,8 @@
+[
+	"environment=development"
+	"vpcidr=10.0.0.0/16",
+	"PublicSubnetA=10.0.1.0/24"
+	"PublicSubnetB=10.0.2.0/24"
+	"PrivateSubnetA=10.0.3.0/24"
+	"PrivateSubnetB=10.0.3.0/24"
+]

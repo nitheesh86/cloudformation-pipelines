@@ -1,0 +1,35 @@
+pipeline {
+  agent {
+    kubernetes {
+    // This is a YAML representation of the Pod, to allow setting any values not supported as fields.
+      yamlFile 'k8s/aws-cli.yaml' // Declarative agents can be defined from YAML.
+    }
+  }
+
+  pipeline {
+     agent any
+     parameters {
+
+        choice(name: 'create_release',
+           choices: 'Yes\nNo',
+           description: 'creates releases')
+
+       choice(name: 'deploy_env',
+             choices: 'None\nDev\nEU_Test\nUS_Test\nUS_Perf\nEU_Stage\nUS_Stage\nEU_Prod\nUS_Prod',
+             description: 'Choose target environment')
+
+       gitParameter (branchFilter: 'master(.*)',
+             name: 'list_tags',
+             defaultValue: 'none',
+             selectedValue: 'NONE',
+             sortMode: 'DESCENDING_SMART',
+             type: 'PT_TAG')
+       }
+
+  stages {
+    stage('Stage 1') {
+    echo 'Hello World' // echo Hello World
+  }
+}
+}
+}
