@@ -12,7 +12,6 @@ pipeline {
              ansiColor('xterm') {
                container("aws-cli") {
                  sh 'aws --version'
-                 sh 'aws sts get-caller-identity'
                }
              }
            }
