@@ -26,9 +26,15 @@ pipeline {
              type: 'PT_TAG')
        }
 
-  stages {
-    stage('Stage 1') {
-    echo 'Hello World' // echo Hello World
-  }
-}
-}
+       stages {
+
+         stage('check version') {
+           steps {
+             ansiColor('xterm') {
+               container("jenkins-agent") {
+                 sh 'aws --version'
+                 sh 'aws sts get-caller-identity'
+               }
+             }
+           }
+         }
