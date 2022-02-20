@@ -3,6 +3,7 @@ kind: Pod
 metadata:
   labels:
     some-label: jenkins-pipeline
+  namespace: jenkins  
 spec:
   containers:
   - name: aws-cli
