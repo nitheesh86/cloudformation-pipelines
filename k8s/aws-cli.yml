@@ -6,12 +6,4 @@ metadata:
 spec:
   containers:
   - name: aws-cli
-    image: amazon/aws-cli
-    tty: true
-    resources:
-      requests:
-        cpu: 100m
-        memory: 256Mi
-      limits:
-        cpu: "1"
-        memory: 1024Mi
+    args: ["s3", "ls"]
