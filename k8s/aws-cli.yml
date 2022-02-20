@@ -2,7 +2,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   labels:
-    cli: aws
+    awscli: awscli
 spec:
   containers:
   - name: aws-cli
